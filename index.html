@@ -1,12 +1,19 @@
+
+
+
 <head>
-   <!-- Google Tag Manager -->
+ <!-- In <head> — add this ABOVE the pixel code -->
+<!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-T3BMD2KJ');</script>
 <!-- End Google Tag Manager -->
-   <!-- Meta Pixel Code --> 
+
+<!-- Right after <body> -->
+
+<!-- Meta Pixel Code -->
 <script>
   !function(f,b,e,v,n,t,s)
   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -19,7 +26,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   fbq('init', '40602625689476');
   fbq('track', 'PageView');
 </script>
-
 <noscript><img height="1" width="1" style="display:none"
   src="https://www.facebook.com/tr?id=40602625689476&ev=PageView&noscript=1"
 /></noscript>
@@ -28,9 +34,51 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <title>pixel test page</title>
 </head>
 <body>
-   <!-- Google Tag Manager (noscript) -->
+  <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T3BMD2KJ"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    <h2>pixel test page</h2>
+    <div>
+    <ul>
+        <li><button id="addToWishlistButton" type="button">Add to Wishlist</button></li>
+        <li><button id="addToCartButton" type="button">Add to Cart</button></li>
+        <li><button id="checkoutButton" type="button">Check Out</button></li>
+        <li><button id="purchaseButton" type="button">Purchase</button></li>
+        <li><button id="subcribeButton" type="button">Subscribe</button></li>
+        <li><button id="registrationButton" type="button">Registration</button></li>
+    </ul>
+    </div>
+
+<script type="text/javascript">
+document.getElementById('addToWishlistButton').addEventListener('click', function() {
+  fbq('track', 'AddToWishlist');
+}, false);
+
+document.getElementById('addToCartButton').addEventListener('click', function() {
+  fbq('track', 'AddToCart');
+}, false);
+
+document.getElementById('checkoutButton').addEventListener('click', function() {
+  fbq('track', 'InitiateCheckout');
+}, false);
+
+document.getElementById('purchaseButton').addEventListener('click', function() {
+  fbq('track', 'Purchase', {
+    value: 100,
+    currency: 'USD',
+  });
+}, false);
+
+document.getElementById('subcribeButton').addEventListener('click', function() {
+  fbq('track', 'Subscribe');
+}, false);
+
+document.getElementById('registrationButton').addEventListener('click', function() {
+  fbq('track', 'CompleteRegistration');
+}, false);
+</script>
+</body>
 <!-- End Google Tag Manager (noscript) -->
     <h2>pixel test page</h2>
     <div>
